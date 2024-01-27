@@ -1,0 +1,50 @@
+.line {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+
+    &_container {
+        width: 1px;
+        height: 100%;
+        position: relative;
+
+        .inner_line {
+            display: flex;
+
+            width: 100%;
+            height: 0%;
+            position: absolute;
+            top: 0;
+            background-color: #fff;
+            animation: tracing 0.5s forwards;
+            animation-timeline: view();
+            animation-range: cover 0% cover 100%;
+
+            @keyframes tracing {
+                to {
+                    height: 100%;
+                }
+            }
+        }
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        &:after {
+            top: 0;
+        }
+
+        &:before {
+            bottom: 0;
+        }
+    }
+}

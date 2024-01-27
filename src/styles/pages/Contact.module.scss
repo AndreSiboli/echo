@@ -1,0 +1,58 @@
+@use '@/styles/_dirs/variables';
+
+.contact {
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4em 2em;
+        padding-top: 7em;
+        min-height: 600px;
+    }
+
+    &_wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    &_text {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    &_info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75em;
+
+        .info {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+
+            a {
+                color: variables.$accent_color;
+                text-decoration: underline;
+            }
+
+            svg {
+                display: block;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    &_merchant {
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5em;
+        }
+    }
+}

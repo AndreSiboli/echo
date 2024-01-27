@@ -1,0 +1,27 @@
+.images_group {
+    columns: 4;
+    column-gap: 1em;
+
+    @media (max-width: 1000px) {
+        columns: 3;
+    }
+
+    @media (max-width: 768px) {
+        columns: 2;
+    }
+
+    @media (max-width: 450px) {
+        columns: 1;
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 1em;
+        background-color: #fff;
+
+        img {
+            object-fit: contain;
+        }
+    }
+}

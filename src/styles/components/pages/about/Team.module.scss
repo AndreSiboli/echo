@@ -1,0 +1,16 @@
+.team {
+    &_image {
+        aspect-ratio: 1/1;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &_name {
+        margin-top: 0.5em;
+        h2 {
+            font-size: calc(1em + 0.2vw);
+        }
+    }
+}

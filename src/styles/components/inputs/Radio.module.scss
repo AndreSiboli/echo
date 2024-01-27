@@ -1,0 +1,30 @@
+.radio {
+    width: 15px;
+    height: 15px;
+
+    input[type='radio'] {
+        display: none;
+
+        &:checked + label .dot {
+            background: #fff;
+        }
+    }
+
+    label {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        cursor: pointer;
+        position: relative;
+
+        .dot {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+}

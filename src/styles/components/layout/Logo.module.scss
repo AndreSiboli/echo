@@ -1,0 +1,69 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.logo {
+    display: block;
+
+    h1 {
+        display: flex;
+        align-items: flex-start;
+        font-size: calc(1.5em + 0.8vw);
+        color: variables.$accent-color;
+
+        .logo_icon {
+            position: relative;
+            rotate: -90deg;
+            transition: 0.25s ease-in-out;
+
+            .icon_camera {
+                display: block;
+                font-size: 0.7em;
+                color: #fff;
+            }
+
+            .icon_flash {
+                position: absolute;
+                top: 0;
+                left: -4px;
+                font-size: 0.4em;
+                opacity: 0;
+                scale: 0;
+                color: variables.$accent-color;
+                animation: sayX 10s linear infinite 5s;
+
+                @keyframes sayX {
+                    0%,
+                    3% {
+                        scale: 1.2;
+                        opacity: 1;
+                    }
+
+                    4% {
+                        scale: 0;
+                        opacity: 0;
+                    }
+
+                    5%,
+                    8% {
+                        scale: 1;
+                        opacity: 1;
+                    }
+
+                    9%,
+                    100% {
+                        scale: 0;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.nonMobile {
+        &:hover {
+            .logo_icon {
+                rotate: -80deg;
+            }
+        }
+    }
+}

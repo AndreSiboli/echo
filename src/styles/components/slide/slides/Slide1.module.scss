@@ -1,0 +1,27 @@
+.slide {
+    width: 100%;
+    height: inherit;
+    z-index: 10;
+    padding: 0 2em;
+
+    &_infos {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: inherit;
+        color: #fff;
+        padding: 7em 0;
+
+        .infos_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            max-width: 500px;
+            width: 100%;
+
+            p {
+                line-height: 1.5em;
+            }
+        }
+    }
+}

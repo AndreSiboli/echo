@@ -1,0 +1,79 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    &.column {
+        flex-direction: column;
+        align-items: flex-start;
+        color: #fff;
+
+        .navigation_links {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &_links {
+        display: flex;
+        align-items: center;
+        gap: 0.75em;
+
+        a {
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                text-shadow: 0 0 10px #fff;
+            }
+        }
+    }
+
+    &_button a {
+        display: inline-block;
+        background: variables.$primary_color;
+        padding: 0.5em 1em;
+        border: 1px solid #fff;
+        position: relative;
+        overflow: hidden;
+
+        .text {
+            display: inline-block;
+            z-index: 99;
+            color: #fff;
+            transition: 0.15s ease-in-out;
+            position: relative;
+        }
+
+        &::after {
+            content: '';
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            transition: 0.2s ease-in-out;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        @include mix.nonMobile {
+            &:hover {
+                border-color: #000;
+
+                .text {
+                    color: #000;
+                }
+
+                &::after {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+        }
+    }
+}

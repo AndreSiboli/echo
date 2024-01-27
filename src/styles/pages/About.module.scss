@@ -1,0 +1,44 @@
+@use '@/styles/_dirs/variables';
+
+.about {
+    &_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3em;
+        padding: 7em 2em;
+    }
+
+    &_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+
+        p {
+            line-height: 1.5em;
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+    }
+
+    &_team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        .team {
+            width: 100%;
+            display: grid;
+            place-content: center;
+            grid-template-columns: repeat(2, minmax(0px, 250px));
+            gap: 2em;
+
+            @media (max-width: 420px) {
+                grid-template-columns: repeat(1, minmax(0px, 250px));
+            }
+        }
+    }
+}

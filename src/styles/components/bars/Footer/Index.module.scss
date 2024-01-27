@@ -1,0 +1,81 @@
+@use '@/styles/_dirs/variables';
+
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 1em 2em;
+    padding-top: 7em;
+    width: 100%;
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        gap: 5em;
+    }
+
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 4em;
+        }
+    }
+
+    &_links {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+
+        > span {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+        }
+    }
+
+    &_social {
+        display: flex;
+        gap: 2em;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+
+        a {
+            height: fit-content;
+        }
+
+        svg {
+            display: block;
+            font-size: 1.5em;
+        }
+
+        .slash {
+            rotate: 25deg;
+        }
+    }
+
+    &_logo {
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &_copyright {
+        text-align: center;
+
+        p {
+            font-size: 1em;
+            color: darken($color: #fff, $amount: 30%);
+        }
+    }
+}

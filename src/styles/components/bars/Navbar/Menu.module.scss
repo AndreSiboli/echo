@@ -1,0 +1,53 @@
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 0%;
+    background-color: #000;
+    visibility: hidden;
+    transition: height 0.5s ease-in-out, visibility 1s ease-in-out;
+    display: flex;
+    overflow: hidden;
+
+    &.active {
+        visibility: visible;
+        height: 100%;
+    }
+
+    &_container {
+        padding-top: calc(1vw + 3.5em);
+        // padding-top: 4.5em;
+
+        width: 100%;
+        z-index: 3;
+    }
+
+    &_overflow {
+        overflow: auto;
+        height: 100%;
+        border-top: 1px solid #fff;
+
+        &::-webkit-scrollbar {
+            max-width: 10px;
+        }
+
+        &::-webkit-scrollbar-track-piece {
+            background: #000;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #fff;
+        }
+    }
+
+    &_wrapper {
+        padding: calc(1em + 10vh) 2em 1em 2em;
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 200px;
+
+        font-size: 1.2em;
+    }
+}
