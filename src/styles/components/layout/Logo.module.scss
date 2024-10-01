@@ -1,0 +1,61 @@
+@use '@/styles/_dirs/variables' as var;
+@use '@/styles/_dirs/mixins' as mix;
+
+.logo {
+  display: block;
+
+  h1 {
+    display: flex;
+    align-items: flex-start;
+    font-size: calc(1.5em + 0.8vw);
+    color: var.$brand_color_300;
+
+    .logo_icon {
+      position: relative;
+      transform: rotate(-65deg) translate(-3px, 4px);
+
+      .icon_camera {
+        display: block;
+        font-size: 0.7em;
+        color: #fff;
+        color: var.$brand_color_300;
+      }
+
+      .icon_flash {
+        position: absolute;
+        top: 0;
+        left: -4px;
+        font-size: 0.4em;
+        opacity: 0;
+        scale: 0;
+        color: var.$neutral_color_100;
+        animation: sayX 10s linear infinite 5s;
+
+        @keyframes sayX {
+          0%,
+          3% {
+            scale: 1.2;
+            opacity: 1;
+          }
+
+          4% {
+            scale: 0;
+            opacity: 0;
+          }
+
+          5%,
+          8% {
+            scale: 1;
+            opacity: 1;
+          }
+
+          9%,
+          100% {
+            scale: 0;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}

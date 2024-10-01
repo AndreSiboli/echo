@@ -1,0 +1,54 @@
+@use '@/styles/_dirs/variables' as var;
+@use '@/styles/_dirs/mixins' as mix;
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  bottom: 0;
+  background: var.$primary_color;
+  visibility: hidden;
+  transition: width 0.25s ease-in-out, visibility 1s ease-in-out;
+  display: flex;
+  overflow: hidden;
+  box-shadow: -5px 0 20px 2px#0005;
+
+  &.active {
+    visibility: visible;
+    width: 300px;
+  }
+
+  &_container {
+    padding-top: calc(1vw + 3.5em);
+    width: 100%;
+    z-index: 3;
+  }
+
+  &_overflow {
+    overflow: auto;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      max-width: 10px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background: #000;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #fff;
+    }
+  }
+
+  &_wrapper {
+    padding: 2em 1.5em;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 200px;
+
+    font-size: 1.2em;
+  }
+}

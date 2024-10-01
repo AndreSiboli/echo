@@ -1,0 +1,72 @@
+@use '@/styles/_dirs/variables' as var;
+
+.contact {
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4em 2em;
+    padding-top: 10em;
+    min-height: 700px;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+
+    .info_header {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 500px;
+      width: 100%;
+
+      h1 {
+        color: var.$brand_color_300;
+      }
+
+      p {
+        color: var.$neutral_color_200;
+      }
+    }
+
+    .info_datas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        a {
+          color: var.$brand_color_300;
+          text-decoration: underline;
+        }
+
+        svg {
+          display: block;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+
+  &_merchant {
+    margin-top: 5em;
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5em;
+
+      svg {
+        color: var.$brand_color_300;
+      }
+    }
+  }
+}

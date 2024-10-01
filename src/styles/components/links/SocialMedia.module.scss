@@ -1,0 +1,25 @@
+@use '@/styles/_dirs/variables' as var;
+@use '@/styles/_dirs/mixins' as mix;
+
+.social {
+  display: flex;
+  gap: 0.75em;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  z-index: 99;
+  pointer-events: auto;
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &_link {
+    a {
+      svg {
+        font-size: 1.1em;
+        color: var.$neutral_color_100;
+      }
+    }
+  }
+}

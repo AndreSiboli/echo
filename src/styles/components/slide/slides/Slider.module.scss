@@ -1,0 +1,40 @@
+@use '@/styles/_dirs/variables' as var;
+@use '@/styles/_dirs/mixins' as mix;
+
+.slide {
+  width: 100%;
+  height: inherit;
+  z-index: 10;
+  padding: 0 2em;
+
+  &_infos {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    color: #fff;
+    padding: 7em 0;
+
+    .infos_wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 500px;
+      width: 100%;
+
+      h1,
+      p {
+        user-select: none;
+      }
+
+      h1 {
+        color: var.$brand_color_300;
+      }
+
+      p {
+        line-height: 1.5em;
+        color: var.$neutral_color_300;
+      }
+    }
+  }
+}

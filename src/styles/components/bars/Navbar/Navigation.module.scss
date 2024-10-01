@@ -1,0 +1,86 @@
+@use '@/styles/_dirs/variables' as var;
+@use '@/styles/_dirs/mixins' as mix;
+@use '@/styles/_dirs/animations' as ani;
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;
+    gap: 1em;
+
+    .navigation_links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5em;
+    }
+  }
+
+  &_links {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    a {
+      transition: text-shadow 0.2s ease-in-out;
+
+      @include mix.OnlyPc {
+        &:hover {
+          animation: 0.25s ease-in-out alternate glitch;
+
+          @include ani.Glitch;
+        }
+      }
+    }
+  }
+
+  &_button a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #fff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5em;
+
+    .text {
+      display: inline-block;
+      z-index: 99;
+      color: #fff;
+      transition: 0.15s ease-in-out;
+      position: relative;
+    }
+
+    &::after {
+      content: '';
+      background: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      transition: 0.2s ease-in-out;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    @include mix.OnlyPc {
+      &:hover {
+        border-color: #000;
+
+        .text {
+          color: #000;
+        }
+
+        &::after {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+  }
+}
